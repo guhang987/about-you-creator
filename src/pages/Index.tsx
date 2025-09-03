@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Camera, MapPin, Code2, Pen, ArrowDown, Github, Mail, Coffee } from "lucide-react";
+import { Camera, MapPin, Code2, Pen, ArrowDown, Github, Mail, Coffee, Car } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
+import techIllustration from "@/assets/tech-illustration.jpg";
+import lifeCollage from "@/assets/life-collage.jpg";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background font-serif">
       {/* Hero Section - Full Screen */}
       <section className="h-screen flex flex-col justify-center items-center relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="城市夜景" className="w-full h-full object-cover opacity-20" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5"></div>
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6 animate-fade-in">
@@ -21,7 +27,7 @@ const Index = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 leading-relaxed">
-            代码诗人 · 生活记录者 · 美学追求者
+            存在主义者 · 北漂程序员 · 极氪车主
           </p>
           
           <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-12">
@@ -31,8 +37,13 @@ const Index = () => {
             </div>
             <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
             <div className="flex items-center gap-1">
+              <Car className="w-4 h-4" />
+              <span>极氪007GT</span>
+            </div>
+            <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
+            <div className="flex items-center gap-1">
               <Coffee className="w-4 h-4" />
-              <span>精品咖啡爱好者</span>
+              <span>炉石传说</span>
             </div>
           </div>
         </div>
@@ -43,69 +54,70 @@ const Index = () => {
       </section>
 
       {/* Navigation Cards Section */}
-      <section className="min-h-screen flex items-center justify-center py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-slide-up">
+      <section className="min-h-screen flex items-center justify-center py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12 animate-slide-up">
             <h2 className="text-4xl font-light mb-4">我的世界</h2>
             <p className="text-lg text-muted-foreground font-light">
-              在代码与生活之间，寻找平衡与美感
+              代码与生活，思考与存在
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* 技术世界 */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* 技术探索 */}
             <Link to="/tech" className="group">
-              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-64 flex flex-col justify-between hover:bg-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2">
-                <div>
-                  <Code2 className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-medium mb-3">技术探索</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">
-                    用代码构建数字世界，在算法中寻找诗意与优雅
-                  </p>
+              <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden h-80 hover:bg-card hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                <div className="h-32 overflow-hidden">
+                  <img src={techIllustration} alt="技术探索" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div className="text-sm text-primary font-light">进入 →</div>
+                <div className="p-6 flex flex-col justify-between h-48">
+                  <div>
+                    <Code2 className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="text-xl font-medium mb-2">技术探索</h3>
+                    <p className="text-muted-foreground font-light text-sm leading-relaxed">
+                      代码世界的诗意构建
+                    </p>
+                  </div>
+                  <div className="text-sm text-primary font-light">进入 →</div>
+                </div>
               </div>
             </Link>
 
-            {/* 跑步记录 */}
-            <Link to="/running" className="group">
-              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-64 flex flex-col justify-between hover:bg-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2">
-                <div>
-                  <div className="w-12 h-12 text-primary mb-4 text-2xl group-hover:scale-110 transition-transform duration-300">🏃‍♂️</div>
-                  <h3 className="text-2xl font-medium mb-3">奔跑足迹</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">
-                    每一步都是对自我的超越，记录汗水与坚持的故事
-                  </p>
-                </div>
-                <div className="text-sm text-primary font-light">进入 →</div>
-              </div>
-            </Link>
-
-            {/* 摄影作品 */}
+            {/* 生活记录 */}
             <Link to="/photography" className="group">
-              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-64 flex flex-col justify-between hover:bg-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2">
-                <div>
-                  <Camera className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-medium mb-3">光影记录</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">
-                    用镜头捕捉瞬间的美好，在光影变化中感受生活
-                  </p>
+              <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden h-80 hover:bg-card hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                <div className="h-32 overflow-hidden">
+                  <img src={lifeCollage} alt="生活记录" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div className="text-sm text-primary font-light">进入 →</div>
+                <div className="p-6 flex flex-col justify-between h-48">
+                  <div>
+                    <Camera className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="text-xl font-medium mb-2">生活记录</h3>
+                    <p className="text-muted-foreground font-light text-sm leading-relaxed">
+                      光影中的日常与美好
+                    </p>
+                  </div>
+                  <div className="text-sm text-primary font-light">进入 →</div>
+                </div>
               </div>
             </Link>
 
-            {/* 博客文章 */}
+            {/* 思考随笔 */}
             <Link to="/blog" className="group">
-              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-64 flex flex-col justify-between hover:bg-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2">
-                <div>
-                  <Pen className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-medium mb-3">思考随笔</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">
-                    记录思维的碎片，分享生活的感悟与技术的思考
-                  </p>
+              <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden h-80 hover:bg-card hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                <div className="h-32 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                  <Pen className="w-16 h-16 text-primary/60" />
                 </div>
-                <div className="text-sm text-primary font-light">进入 →</div>
+                <div className="p-6 flex flex-col justify-between h-48">
+                  <div>
+                    <div className="w-8 h-8 text-primary mb-3 text-xl group-hover:scale-110 transition-transform duration-300">✨</div>
+                    <h3 className="text-xl font-medium mb-2">思考随笔</h3>
+                    <p className="text-muted-foreground font-light text-sm leading-relaxed">
+                      存在主义的思维碎片
+                    </p>
+                  </div>
+                  <div className="text-sm text-primary font-light">进入 →</div>
+                </div>
               </div>
             </Link>
           </div>
@@ -113,20 +125,17 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="min-h-screen flex items-center justify-center py-20 px-6 bg-muted/20">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="min-h-screen flex items-center justify-center py-16 px-6 bg-muted/10">
+        <div className="max-w-3xl mx-auto text-center">
           <div className="animate-slide-up">
             <h2 className="text-4xl font-light mb-8">关于我</h2>
             
-            <div className="text-lg leading-relaxed text-muted-foreground font-light space-y-6 mb-12">
+            <div className="text-lg leading-relaxed text-muted-foreground font-light space-y-4 mb-12">
               <p>
-                我是一名热爱生活的程序员，相信技术与美学并不冲突。
+                存在主义者，北漂程序员，在代码与哲学间寻找平衡。
               </p>
               <p>
-                在代码的世界里追求优雅与效率，在生活中寻找平静与美好。
-              </p>
-              <p>
-                跑步让我保持清醒，摄影帮我发现美感，写作助我沉淀思考。
+                开着极氪007GT穿梭于城市，用镜头记录生活，在炉石中思考策略。
               </p>
             </div>
             
@@ -137,7 +146,7 @@ const Index = () => {
               </Button>
               <Button variant="outline" size="lg" className="gap-2 font-light">
                 <Mail className="w-4 h-4" />
-                邮箱联系
+                联系我
               </Button>
             </div>
           </div>
