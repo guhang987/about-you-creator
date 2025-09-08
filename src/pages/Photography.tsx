@@ -2,6 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Camera, MapPin, Clock, Heart, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
+import photoCityNight from "@/assets/photo-city-night.jpg";
+import photoMorningLight from "@/assets/photo-morning-light.jpg";
+import photoCoffeeShop from "@/assets/photo-coffee-shop.jpg";
+import photoRainbow from "@/assets/photo-rainbow.jpg";
+import photoBookstore from "@/assets/photo-bookstore.jpg";
+import photoArchitecture from "@/assets/photo-architecture.jpg";
 
 const Photography = () => {
   const photos = [
@@ -13,7 +19,8 @@ const Photography = () => {
       description: "霓虹灯下的都市生活，每一束光都诉说着这座城市的故事",
       camera: "Canon R5",
       settings: "f/2.8, 1/60s, ISO 800",
-      category: "城市"
+      category: "城市",
+      image: photoCityNight
     },
     {
       id: 2,
@@ -23,7 +30,8 @@ const Photography = () => {
       description: "清晨的第一缕阳光穿过树叶，温柔地唤醒沉睡的大地",
       camera: "Sony A7R4",
       settings: "f/4.0, 1/125s, ISO 200",
-      category: "自然"
+      category: "自然",
+      image: photoMorningLight
     },
     {
       id: 3,
@@ -33,7 +41,8 @@ const Photography = () => {
       description: "午后的咖啡馆，时光在这里慢慢流淌",
       camera: "Fuji X-T4",
       settings: "f/1.8, 1/80s, ISO 400",
-      category: "生活"
+      category: "生活",
+      image: photoCoffeeShop
     },
     {
       id: 4,
@@ -43,7 +52,8 @@ const Photography = () => {
       description: "雨过天晴后的彩虹，大自然最美的礼物",
       camera: "Canon R5",
       settings: "f/5.6, 1/250s, ISO 100",
-      category: "自然"
+      category: "自然",
+      image: photoRainbow
     },
     {
       id: 5,
@@ -53,7 +63,8 @@ const Photography = () => {
       description: "书香中的宁静时光，知识与美好在这里相遇",
       camera: "Leica Q2",
       settings: "f/2.0, 1/60s, ISO 640",
-      category: "生活"
+      category: "生活",
+      image: photoBookstore
     },
     {
       id: 6,
@@ -63,7 +74,8 @@ const Photography = () => {
       description: "现代建筑的几何美学，线条与光影的完美对话",
       camera: "Sony A7R4",
       settings: "f/8.0, 1/200s, ISO 100",
-      category: "建筑"
+      category: "建筑",
+      image: photoArchitecture
     }
   ];
 
@@ -153,9 +165,11 @@ const Photography = () => {
             {photos.map((photo) => (
               <Card key={photo.id} className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card transition-all duration-300 hover:shadow-lg group overflow-hidden">
                 <div className="aspect-[4/3] bg-muted/20 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                    <Camera className="w-12 h-12 text-muted-foreground/50" />
-                  </div>
+                  <img 
+                    src={photo.image} 
+                    alt={photo.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                   <div className="absolute top-3 right-3">
                     <Badge variant="secondary" className="font-light text-xs">
                       {photo.category}
