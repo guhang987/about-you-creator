@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Clock, Tag, Eye, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useStaticBlog } from "@/hooks/useStaticBlog";
 import { useState } from "react";
+import blogHero from "@/assets/blog-hero.jpg";
 
 const Blog = () => {
   const { posts, loading } = useStaticBlog();
@@ -47,12 +48,23 @@ const Blog = () => {
 
       <div className="container mx-auto px-6 py-16 max-w-6xl">
         {/* Hero */}
-        <section className="text-center mb-20 animate-fade-in">
-          <div className="text-6xl mb-6">✍️</div>
-          <h2 className="text-5xl font-light mb-6">文字的力量</h2>
-          <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
-            记录思维的碎片，分享生活的感悟。在快节奏的世界中，文字是我们与内心对话的桥梁，是思想沉淀的容器。
-          </p>
+        <section className="relative mb-20 animate-fade-in">
+          <div className="relative h-96 rounded-3xl overflow-hidden mb-8">
+            <img 
+              src={blogHero} 
+              alt="思考随笔" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div className="text-center text-white">
+                <div className="text-6xl mb-6">✍️</div>
+                <h2 className="text-5xl font-light mb-6">思考随笔</h2>
+                <p className="text-xl font-light leading-relaxed max-w-3xl mx-auto">
+                  记录思维的碎片，分享生活的感悟。在快节奏的世界中，文字是我们与内心对话的桥梁，是思想沉淀的容器。
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Stats */}

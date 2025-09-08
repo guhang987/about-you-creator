@@ -43,7 +43,7 @@ const Index = () => {
             <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
             <div className="flex items-center gap-1">
               <Coffee className="w-4 h-4" />
-              <span>炉石传说</span>
+              <span>咖啡爱好者</span>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@ const Index = () => {
                 存在主义者，北漂程序员，在代码与哲学间寻找平衡。
               </p>
               <p>
-                开着极氪007GT穿梭于城市，用镜头记录生活，在炉石中思考策略。
+                开着极氪007GT穿梭于城市，用镜头记录生活，在咖啡香中思考人生。
               </p>
             </div>
             
