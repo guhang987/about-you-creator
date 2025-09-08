@@ -3,76 +3,32 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, Calendar, Clock, Tag, Eye } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { HeartAnimation } from "@/components/ui/heart-animation";
-import { supabase } from "@/integrations/supabase/client";
-import { useBlog } from "@/hooks/useBlog";
+import { useStaticBlog } from "@/hooks/useStaticBlog";
+import { BlogPost as BlogPostType } from "@/data/staticBlogData";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  category: string;
-  tags: string[];
-  created_at: string;
-  read_time: string;
-  views: number;
-  likes: number;
-}
 
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
-  const [post, setPost] = useState<BlogPost | null>(null);
+  const [post, setPost] = useState<BlogPostType | null>(null);
   const [loading, setLoading] = useState(true);
-  const [isLiked, setIsLiked] = useState(false);
-  const { toggleLike, checkIfLiked, recordView } = useBlog();
+  const { getPostById } = useStaticBlog();
 
   useEffect(() => {
     const fetchPost = async () => {
       if (!id) return;
 
-      try {
-        // Fetch the post
-        const { data, error } = await supabase
-          .from('blog_posts')
-          .select('*')
-          .eq('id', id)
-          .single();
-
-        if (error) throw error;
-        setPost(data);
-
-        // Record view
-        await recordView(id);
-
-        // Check if liked
-        const liked = await checkIfLiked(id);
-        setIsLiked(liked);
-      } catch (error) {
-        console.error('Error fetching post:', error);
-      } finally {
-        setLoading(false);
-      }
+      setLoading(true);
+      // 模拟加载延迟
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      const foundPost = getPostById(id);
+      setPost(foundPost || null);
+      setLoading(false);
     };
 
     fetchPost();
-  }, [id, recordView, checkIfLiked]);
+  }, [id, getPostById]);
 
-  const handleLike = async () => {
-    if (!id) return;
-    
-    const result = await toggleLike(id);
-    if (result !== null) {
-      setIsLiked(result);
-      // Update the post likes count
-      if (post) {
-        setPost(prev => prev ? {
-          ...prev,
-          likes: result ? prev.likes + 1 : prev.likes - 1
-        } : null);
-      }
-    }
-  };
 
   if (loading) {
     return (
@@ -158,11 +114,7 @@ const BlogPost = () => {
           </div>
           
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <HeartAnimation
-              isLiked={isLiked}
-              onClick={handleLike}
-            />
-            <span>{post.likes}</span>
+            <span>{post.likes} 点赞</span>
           </div>
         </div>
       </article>

@@ -2,13 +2,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, Clock, Tag, Eye, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useBlog } from "@/hooks/useBlog";
-import { HeartAnimation } from "@/components/ui/heart-animation";
-import { useState, useEffect } from "react";
+import { useStaticBlog } from "@/hooks/useStaticBlog";
+import { useState } from "react";
 
 const Blog = () => {
-  const { posts, loading, recordView, toggleLike, checkIfLiked } = useBlog();
-  const [likedPosts, setLikedPosts] = useState<Record<string, boolean>>({});
+  const { posts, loading } = useStaticBlog();
   const [selectedCategory, setSelectedCategory] = useState("全部");
 
   const categories = ["全部", "技术思考", "生活感悟", "技术分享", "生活观察", "技术深入", "摄影心得"];
@@ -24,26 +22,6 @@ const Blog = () => {
     followers: "856"
   };
 
-  useEffect(() => {
-    const checkLikedStatus = async () => {
-      const likedStatus: Record<string, boolean> = {};
-      for (const post of posts) {
-        likedStatus[post.id] = await checkIfLiked(post.id);
-      }
-      setLikedPosts(likedStatus);
-    };
-
-    if (posts.length > 0) {
-      checkLikedStatus();
-    }
-  }, [posts, checkIfLiked]);
-
-  const handleLike = async (postId: string) => {
-    const result = await toggleLike(postId);
-    if (result !== null) {
-      setLikedPosts(prev => ({ ...prev, [postId]: result }));
-    }
-  };
 
   if (loading) {
     return (
@@ -176,18 +154,13 @@ const Blog = () => {
                         <span>{post.views}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <HeartAnimation
-                          isLiked={likedPosts[post.id] || false}
-                          onClick={() => handleLike(post.id)}
-                          className="p-0"
-                        />
+                        <Heart className="w-3 h-3" />
                         <span>{post.likes}</span>
                       </div>
                     </div>
                     <Link 
                       to={`/blog/${post.id}`} 
                       className="text-primary font-light hover:underline"
-                      onClick={() => recordView(post.id)}
                     >
                       阅读全文 →
                     </Link>
