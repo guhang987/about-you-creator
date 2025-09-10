@@ -5,6 +5,7 @@ import { Camera, MapPin, Code2, Pen, ArrowDown, Github, Mail, Coffee, Car } from
 import heroBg from "@/assets/hero-bg.jpg";
 import techIllustration from "@/assets/tech-illustration.jpg";
 import lifeCollage from "@/assets/life-collage.jpg";
+import blogHero from "@/assets/blog-hero.jpg";
 
 const Index = () => {
   return (
@@ -105,8 +106,8 @@ const Index = () => {
             {/* 思考随笔 */}
             <Link to="/blog" className="group">
               <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden h-80 hover:bg-card hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="h-32 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                  <Pen className="w-16 h-16 text-primary/60" />
+                <div className="h-32 overflow-hidden">
+                  <img src={blogHero} alt="思考随笔" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6 flex flex-col justify-between h-48">
                   <div>
