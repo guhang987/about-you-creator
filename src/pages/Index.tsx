@@ -14,9 +14,9 @@ const Index = () => {
       {/* Hero Section - Full Screen */}
       <section className="h-screen flex flex-col justify-center items-center relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="城市夜景" className="w-full h-full object-cover opacity-20" />
+          <img src={heroBg} alt="城市夜景" className="w-full h-full object-cover opacity-60" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/40"></div>
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6 animate-fade-in">
           <Avatar className="w-40 h-40 mx-auto mb-8 border-2 border-primary/10 animate-float">
