@@ -6,6 +6,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import techIllustration from "@/assets/tech-illustration.jpg";
 import lifeCollage from "@/assets/life-collage.jpg";
 import blogHero from "@/assets/blog-hero.jpg";
+import avatar from "@/assets/avatar.jpg";
 
 const Index = () => {
   return (
@@ -19,7 +20,7 @@ const Index = () => {
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6 animate-fade-in">
           <Avatar className="w-40 h-40 mx-auto mb-8 border-2 border-primary/10 animate-float">
-            <AvatarImage src="/placeholder.svg" alt="头像" />
+            <AvatarImage src={avatar} alt="李明轩头像" />
             <AvatarFallback className="text-4xl font-light bg-primary/5">李</AvatarFallback>
           </Avatar>
           
