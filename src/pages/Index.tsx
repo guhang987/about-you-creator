@@ -27,9 +27,6 @@ const Index = () => {
             李明轩
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 leading-relaxed">
-            存在主义者 · 北漂程序员 · 极氪车主
-          </p>
           
           <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-12">
             <div className="flex items-center gap-1">
@@ -39,7 +36,7 @@ const Index = () => {
             <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
             <div className="flex items-center gap-1">
               <Car className="w-4 h-4" />
-              <span>极氪007GT</span>
+              <span>存在主义者</span>
             </div>
             <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
             <div className="flex items-center gap-1">
