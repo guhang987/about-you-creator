@@ -36,30 +36,30 @@ const Blog = () => {
     <div className="min-h-screen bg-background font-serif">
       {/* Header */}
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
             <ArrowLeft className="w-4 h-4" />
-            <span className="font-light">返回首页</span>
+            <span className="font-light text-sm md:text-base">返回首页</span>
           </Link>
-          <h1 className="text-2xl font-light">思考随笔</h1>
+          <h1 className="text-lg md:text-2xl font-light">思考随笔</h1>
           <div></div>
         </div>
       </header>
 
-      <div className="container mx-auto px-6 py-16 max-w-6xl">
+      <div className="container mx-auto px-4 md:px-6 py-8 md:py-16 max-w-6xl">
         {/* Hero */}
-        <section className="relative mb-20 animate-fade-in">
-          <div className="relative h-96 rounded-3xl overflow-hidden mb-8">
+        <section className="relative mb-12 md:mb-20 animate-fade-in">
+          <div className="relative h-64 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden mb-8">
             <img 
               src={blogHero} 
               alt="思考随笔" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <div className="text-center text-white">
-                <div className="text-6xl mb-6">✍️</div>
-                <h2 className="text-5xl font-light mb-6">思考随笔</h2>
-                <p className="text-xl font-light leading-relaxed max-w-3xl mx-auto">
+              <div className="text-center text-white px-4">
+                <div className="text-4xl md:text-6xl mb-4 md:mb-6">✍️</div>
+                <h2 className="text-3xl md:text-5xl font-light mb-4 md:mb-6">思考随笔</h2>
+                <p className="text-base md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
                   记录思维的碎片，分享生活的感悟。在快节奏的世界中，文字是我们与内心对话的桥梁，是思想沉淀的容器。
                 </p>
               </div>
@@ -68,37 +68,37 @@ const Blog = () => {
         </section>
 
         {/* Stats */}
-        <section className="mb-20">
-          <div className="grid md:grid-cols-4 gap-6">
+        <section className="mb-12 md:mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
             <Card className="text-center bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6">
-                <div className="text-primary mx-auto mb-3 text-2xl">📝</div>
-                <div className="text-2xl font-light mb-1">{stats.totalPosts}</div>
-                <div className="text-sm text-muted-foreground font-light">文章数量</div>
+              <CardContent className="p-3 md:p-6">
+                <div className="text-primary mx-auto mb-2 md:mb-3 text-lg md:text-2xl">📝</div>
+                <div className="text-lg md:text-2xl font-light mb-1">{stats.totalPosts}</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-light">文章数量</div>
               </CardContent>
             </Card>
 
             <Card className="text-center bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6">
-                <Eye className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-2xl font-light mb-1">{stats.totalViews}</div>
-                <div className="text-sm text-muted-foreground font-light">总阅读量</div>
+              <CardContent className="p-3 md:p-6">
+                <Eye className="w-5 h-5 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                <div className="text-lg md:text-2xl font-light mb-1">{stats.totalViews}</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-light">总阅读量</div>
               </CardContent>
             </Card>
 
             <Card className="text-center bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6">
-                <Heart className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-2xl font-light mb-1">{stats.totalLikes}</div>
-                <div className="text-sm text-muted-foreground font-light">获赞数</div>
+              <CardContent className="p-3 md:p-6">
+                <Heart className="w-5 h-5 md:w-8 md:h-8 text-primary mx-auto mb-2 md:mb-3" />
+                <div className="text-lg md:text-2xl font-light mb-1">{stats.totalLikes}</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-light">获赞数</div>
               </CardContent>
             </Card>
 
             <Card className="text-center bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6">
-                <div className="text-primary mx-auto mb-3 text-2xl">👥</div>
-                <div className="text-2xl font-light mb-1">{stats.followers}</div>
-                <div className="text-sm text-muted-foreground font-light">关注者</div>
+              <CardContent className="p-3 md:p-6">
+                <div className="text-primary mx-auto mb-2 md:mb-3 text-lg md:text-2xl">👥</div>
+                <div className="text-lg md:text-2xl font-light mb-1">{stats.followers}</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-light">关注者</div>
               </CardContent>
             </Card>
           </div>
@@ -185,9 +185,9 @@ const Blog = () => {
         </section>
 
         {/* Writing Philosophy */}
-        <section className="text-center bg-muted/20 rounded-3xl p-12">
-          <h3 className="text-3xl font-light mb-8">写作感悟</h3>
-          <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
+        <section className="text-center bg-muted/20 rounded-2xl md:rounded-3xl p-6 md:p-12">
+          <h3 className="text-2xl md:text-3xl font-light mb-6 md:mb-8">写作感悟</h3>
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 text-base md:text-lg text-muted-foreground font-light leading-relaxed">
             <p>
               "写作是思考的延伸，是与自己内心对话的方式。每一个文字都承载着情感，每一句话都反映着思考的深度。"
             </p>
