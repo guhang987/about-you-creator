@@ -5,12 +5,6 @@ import { ArrowLeft, Code, Database, Cloud, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Tech = () => {
-  const skills = {
-    frontend: ["React", "TypeScript", "Next.js", "Vue.js", "Tailwind CSS"],
-    backend: ["Node.js", "Python", "Java", "Go", "GraphQL"],
-    database: ["PostgreSQL", "MongoDB", "Redis", "InfluxDB"],
-    cloud: ["AWS", "Docker", "Kubernetes", "CI/CD"]
-  };
 
   const projects = [
     {
@@ -56,65 +50,130 @@ const Tech = () => {
           </p>
         </section>
 
-        {/* Skills */}
+        {/* Skills Mind Map */}
         <section className="mb-20">
           <h3 className="text-3xl font-light text-center mb-12">技能图谱</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card transition-all duration-300">
-              <CardHeader className="pb-4">
-                <Code className="w-8 h-8 text-primary mb-3" />
-                <CardTitle className="font-medium">前端开发</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.frontend.map((skill) => (
-                    <Badge key={skill} variant="outline" className="font-light">{skill}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <div className="relative w-full h-[800px] md:h-[900px] bg-gradient-to-br from-background to-muted/20 rounded-3xl p-8 overflow-hidden">
+            {/* Central Theme */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="bg-primary text-primary-foreground px-6 py-4 rounded-2xl shadow-lg border-2 border-primary-foreground/20">
+                <h4 className="text-lg md:text-xl font-medium text-center whitespace-nowrap">云计算与云网络技术体系</h4>
+              </div>
+            </div>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card transition-all duration-300">
-              <CardHeader className="pb-4">
-                <Database className="w-8 h-8 text-primary mb-3" />
-                <CardTitle className="font-medium">后端开发</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.backend.map((skill) => (
-                    <Badge key={skill} variant="outline" className="font-light">{skill}</Badge>
-                  ))}
+            {/* Branch 1: Cloud Network Backend - Top */}
+            <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-blue-900 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2 border-2 border-blue-700">
+                  <Database className="w-5 h-5" />
+                  <span className="font-medium text-sm md:text-base">云网络后端开发</span>
                 </div>
-              </CardContent>
-            </Card>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                  <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-lg">网络控制器技术 ★★★★★</div>
+                  <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-lg">SDN/NFV ★★★★</div>
+                  <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-lg">BGP/OSPF ★★★★</div>
+                  <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-lg">网络安全 ★★★★</div>
+                </div>
+              </div>
+              {/* Connection line */}
+              <div className="w-px h-20 bg-border mx-auto mt-2"></div>
+            </div>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card transition-all duration-300">
-              <CardHeader className="pb-4">
-                <Smartphone className="w-8 h-8 text-primary mb-3" />
-                <CardTitle className="font-medium">数据存储</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.database.map((skill) => (
-                    <Badge key={skill} variant="outline" className="font-light">{skill}</Badge>
-                  ))}
+            {/* Branch 2: System Architecture - Top Right */}
+            <div className="absolute top-16 right-8 md:right-16">
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-purple-900 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2 border-2 border-purple-700">
+                  <Cloud className="w-5 h-5" />
+                  <span className="font-medium text-sm md:text-base">系统架构设计</span>
                 </div>
-              </CardContent>
-            </Card>
+                <div className="grid grid-cols-1 gap-2 text-xs">
+                  <div className="bg-purple-100 text-purple-900 px-3 py-1 rounded-lg">大规模分布式系统 ★★★★★</div>
+                  <div className="bg-purple-100 text-purple-900 px-3 py-1 rounded-lg">高可用架构 ★★★★</div>
+                  <div className="bg-purple-100 text-purple-900 px-3 py-1 rounded-lg">灾备方案 ★★★★</div>
+                </div>
+              </div>
+              {/* Connection line */}
+              <div className="w-16 h-px bg-border rotate-45 origin-left mt-2"></div>
+            </div>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card transition-all duration-300">
-              <CardHeader className="pb-4">
-                <Cloud className="w-8 h-8 text-primary mb-3" />
-                <CardTitle className="font-medium">云端部署</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.cloud.map((skill) => (
-                    <Badge key={skill} variant="outline" className="font-light">{skill}</Badge>
-                  ))}
+            {/* Branch 3: Cloud Infrastructure - Right */}
+            <div className="absolute top-1/2 right-4 md:right-8 transform -translate-y-1/2">
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-green-700 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
+                  <Smartphone className="w-5 h-5" />
+                  <span className="font-medium text-sm md:text-base">云计算基础设施</span>
                 </div>
-              </CardContent>
-            </Card>
+                <div className="grid grid-cols-1 gap-2 text-xs">
+                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg">云主机部署 ★★★★</div>
+                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg">运维自动化 ★★★★</div>
+                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg">Docker/K8s ★★★★</div>
+                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg">资源调度 ★★★</div>
+                </div>
+              </div>
+              {/* Connection line */}
+              <div className="w-20 h-px bg-border -ml-20 mt-2"></div>
+            </div>
+
+            {/* Branch 4: Database - Bottom Right */}
+            <div className="absolute bottom-16 right-8 md:right-16">
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-gray-600 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
+                  <Database className="w-5 h-5" />
+                  <span className="font-medium text-sm md:text-base">数据库技术</span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                  <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg">MySQL ★★★★</div>
+                  <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg">PostgreSQL ★★★★</div>
+                  <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg">Redis ★★★★</div>
+                  <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg">InfluxDB ★★★</div>
+                </div>
+              </div>
+              {/* Connection line */}
+              <div className="w-16 h-px bg-border rotate-135 origin-left -mt-2"></div>
+            </div>
+
+            {/* Branch 5: Engineering Practice - Bottom */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-orange-700 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
+                  <Code className="w-5 h-5" />
+                  <span className="font-medium text-sm md:text-base">工程实践</span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
+                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">CI/CD ★★★★</div>
+                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">微服务架构 ★★★★</div>
+                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">性能优化 ★★★★</div>
+                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">测试驱动开发 ★★★</div>
+                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">代码审查 ★★★★</div>
+                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">文档规范 ★★★</div>
+                </div>
+              </div>
+              {/* Connection line */}
+              <div className="w-px h-20 bg-border mx-auto -mt-20"></div>
+            </div>
+
+            {/* Branch 6: Frontend - Left */}
+            <div className="absolute top-1/2 left-4 md:left-8 transform -translate-y-1/2">
+              <div className="flex flex-col items-center space-y-3">
+                <div className="bg-teal-600 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
+                  <Code className="w-5 h-5" />
+                  <span className="font-medium text-sm md:text-base">前端技术</span>
+                </div>
+                <div className="grid grid-cols-1 gap-2 text-xs">
+                  <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-lg">React ★★★</div>
+                  <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-lg">TypeScript ★★★</div>
+                  <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-lg">Vue.js ★★★</div>
+                  <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-lg">Tailwind CSS ★★★</div>
+                </div>
+              </div>
+              {/* Connection line */}
+              <div className="w-20 h-px bg-border ml-20 mt-2"></div>
+            </div>
+
+            {/* Legend */}
+            <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-lg border">
+              <p className="text-xs text-muted-foreground">★★★★★ 精通 | ★★★★ 熟练 | ★★★ 掌握</p>
+            </div>
           </div>
         </section>
 
