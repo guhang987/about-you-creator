@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { ArrowLeft, Calendar, Clock, Tag, Eye } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,34 +8,9 @@ import { BlogPost as BlogPostType } from "@/data/staticBlogData";
 
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
-  const [post, setPost] = useState<BlogPostType | null>(null);
-  const [loading, setLoading] = useState(true);
   const { getPostById } = useStaticBlog();
+  const post = id ? getPostById(id) : null;
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      if (!id) return;
-
-      setLoading(true);
-      // 模拟加载延迟
-      await new Promise(resolve => setTimeout(resolve, 300));
-      
-      const foundPost = getPostById(id);
-      setPost(foundPost || null);
-      setLoading(false);
-    };
-
-    fetchPost();
-  }, [id, getPostById]);
-
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background font-serif flex items-center justify-center">
-        <div className="text-xl text-muted-foreground">加载中...</div>
-      </div>
-    );
-  }
 
   if (!post) {
     return (
