@@ -61,92 +61,92 @@ const Tech = () => {
                 <h4 className="text-sm font-semibold">云网络后端开发</h4>
               </div>
               <div className="space-y-1 text-xs">
-                <div>网络控制器技术</div>
-                <div>SDN/NFV</div>
-                <div>BGP/OSPF协议</div>
-                <div>网络安全策略</div>
-                <div>虚拟网络架构</div>
-                <div>网络拓扑管理</div>
+                <div>• OVS/OVN控制器</div>
+                <div>• SDN/NFV架构</div>
+                <div>• BGP/OSPF/ISIS</div>
+                <div>• iptables/netfilter</div>
+                <div>• VXLAN/GRE隧道</div>
+                <div>• Go/Java/Python</div>
               </div>
             </div>
 
             {/* Card 2: Distributed Systems (Core) */}
-            <div className="bg-purple-900 text-white p-4 rounded-lg shadow-md">
+            <div className="bg-emerald-800 text-white p-4 rounded-lg shadow-md">
               <div className="flex items-center gap-2 mb-3">
                 <Cloud className="w-4 h-4" />
                 <h4 className="text-sm font-semibold">大规模分布式系统</h4>
               </div>
               <div className="space-y-1 text-xs">
-                <div>分布式架构设计</div>
-                <div>高可用/高可靠方案</div>
-                <div>灾备与容错机制</div>
-                <div>大规模集群调度</div>
-                <div>负载均衡策略</div>
-                <div>分布式一致性</div>
+                <div>• CAP理论/BASE</div>
+                <div>• Raft/Paxos一致性</div>
+                <div>• ETCD/Consul集群</div>
+                <div>• 分布式锁/事务</div>
+                <div>• 负载均衡/熔断</div>
+                <div>• 微服务架构</div>
               </div>
             </div>
 
             {/* Card 3: Cloud Infrastructure */}
-            <div className="bg-slate-100 text-slate-900 p-4 rounded-lg shadow-md">
+            <div className="bg-orange-700 text-white p-4 rounded-lg shadow-md">
               <div className="flex items-center gap-2 mb-3">
                 <Smartphone className="w-4 h-4" />
                 <h4 className="text-sm font-semibold">云计算基础设施</h4>
               </div>
               <div className="space-y-1 text-xs">
-                <div>云主机部署</div>
-                <div>运维自动化</div>
-                <div>Docker/K8s</div>
-                <div>资源监控告警</div>
-                <div>弹性伸缩</div>
-                <div>服务网格</div>
+                <div>• Kubernetes/Docker</div>
+                <div>• Prometheus/Grafana</div>
+                <div>• Ansible/Terraform</div>
+                <div>• Istio服务网格</div>
+                <div>• Helm Chart部署</div>
+                <div>• CI/CD Pipeline</div>
               </div>
             </div>
 
-            {/* Card 4: Frontend Tech */}
-            <div className="bg-slate-100 text-slate-900 p-4 rounded-lg shadow-md">
+            {/* Card 4: Backend Development */}
+            <div className="bg-purple-800 text-white p-4 rounded-lg shadow-md">
               <div className="flex items-center gap-2 mb-3">
                 <Code className="w-4 h-4" />
-                <h4 className="text-sm font-semibold">前端技术</h4>
+                <h4 className="text-sm font-semibold">后端开发技术</h4>
               </div>
               <div className="space-y-1 text-xs">
-                <div>React</div>
-                <div>Vue.js</div>
-                <div>TypeScript</div>
-                <div>前端工程化</div>
-                <div>组件设计</div>
-                <div>响应式布局</div>
+                <div>• Golang/Java/Python</div>
+                <div>• Redis/Memcached</div>
+                <div>• gRPC/RESTful API</div>
+                <div>• RabbitMQ/Kafka</div>
+                <div>• Gin/Spring Boot</div>
+                <div>• 高并发架构</div>
               </div>
             </div>
 
             {/* Card 5: Database Tech */}
-            <div className="bg-slate-100 text-slate-900 p-4 rounded-lg shadow-md">
+            <div className="bg-teal-700 text-white p-4 rounded-lg shadow-md">
               <div className="flex items-center gap-2 mb-3">
                 <Database className="w-4 h-4" />
                 <h4 className="text-sm font-semibold">数据库技术</h4>
               </div>
               <div className="space-y-1 text-xs">
-                <div>MySQL</div>
-                <div>PostgreSQL</div>
-                <div>Redis</div>
-                <div>数据库优化</div>
-                <div>事务与锁机制</div>
-                <div>数据建模</div>
+                <div>• MySQL/PostgreSQL</div>
+                <div>• InfluxDB时序数据</div>
+                <div>• MongoDB/CouchDB</div>
+                <div>• 索引优化/分库分表</div>
+                <div>• ACID事务特性</div>
+                <div>• 主从复制/读写分离</div>
               </div>
             </div>
 
-            {/* Card 6: Engineering Practice */}
-            <div className="bg-slate-100 text-slate-900 p-4 rounded-lg shadow-md">
+            {/* Card 6: Frontend & DevOps */}
+            <div className="bg-indigo-800 text-white p-4 rounded-lg shadow-md">
               <div className="flex items-center gap-2 mb-3">
                 <Code className="w-4 h-4" />
-                <h4 className="text-sm font-semibold">工程实践</h4>
+                <h4 className="text-sm font-semibold">前端与工程实践</h4>
               </div>
               <div className="space-y-1 text-xs">
-                <div>Vibe coding</div>
-                <div>CI/CD流程</div>
-                <div>代码评审</div>
-                <div>测试驱动开发</div>
-                <div>敏捷开发</div>
-                <div>性能优化</div>
+                <div>• React/Vue.js/Angular</div>
+                <div>• TypeScript/ES6+</div>
+                <div>• Jenkins/GitLab CI</div>
+                <div>• Webpack/Vite构建</div>
+                <div>• TDD/单元测试</div>
+                <div>• Vibe Coding流程</div>
               </div>
             </div>
           </div>
