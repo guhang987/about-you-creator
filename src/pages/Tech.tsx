@@ -50,130 +50,188 @@ const Tech = () => {
           </p>
         </section>
 
-        {/* Skills Mind Map */}
+        {/* Skills Cards */}
         <section className="mb-20">
           <h3 className="text-3xl font-light text-center mb-12">技能图谱</h3>
-          <div className="relative w-full h-[800px] md:h-[900px] bg-gradient-to-br from-background to-muted/20 rounded-3xl p-8 overflow-hidden">
-            {/* Central Theme */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="bg-primary text-primary-foreground px-6 py-4 rounded-2xl shadow-lg border-2 border-primary-foreground/20">
-                <h4 className="text-lg md:text-xl font-medium text-center whitespace-nowrap">云计算与云网络技术体系</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Card 1: Cloud Network Backend (Core) */}
+            <div className="bg-blue-900 text-white p-6 rounded-xl shadow-lg h-80">
+              <div className="flex items-center gap-3 mb-4">
+                <Database className="w-6 h-6" />
+                <h4 className="text-lg font-semibold">云网络后端开发</h4>
               </div>
-            </div>
-
-            {/* Branch 1: Cloud Network Backend - Top */}
-            <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
-              <div className="flex flex-col items-center space-y-3">
-                <div className="bg-blue-900 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2 border-2 border-blue-700">
-                  <Database className="w-5 h-5" />
-                  <span className="font-medium text-sm md:text-base">云网络后端开发</span>
+              <div className="space-y-2 mb-4 flex-1">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">网络控制器技术</span>
+                  <span className="text-yellow-400">★★★★★</span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
-                  <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-lg">网络控制器技术 ★★★★★</div>
-                  <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-lg">SDN/NFV ★★★★</div>
-                  <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-lg">BGP/OSPF ★★★★</div>
-                  <div className="bg-blue-100 text-blue-900 px-3 py-1 rounded-lg">网络安全 ★★★★</div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">SDN/NFV</span>
+                  <span className="text-yellow-400">★★★★</span>
                 </div>
-              </div>
-              {/* Connection line */}
-              <div className="w-px h-20 bg-border mx-auto mt-2"></div>
-            </div>
-
-            {/* Branch 2: System Architecture - Top Right */}
-            <div className="absolute top-16 right-8 md:right-16">
-              <div className="flex flex-col items-center space-y-3">
-                <div className="bg-purple-900 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2 border-2 border-purple-700">
-                  <Cloud className="w-5 h-5" />
-                  <span className="font-medium text-sm md:text-base">系统架构设计</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">BGP/OSPF协议</span>
+                  <span className="text-yellow-400">★★★★</span>
                 </div>
-                <div className="grid grid-cols-1 gap-2 text-xs">
-                  <div className="bg-purple-100 text-purple-900 px-3 py-1 rounded-lg">大规模分布式系统 ★★★★★</div>
-                  <div className="bg-purple-100 text-purple-900 px-3 py-1 rounded-lg">高可用架构 ★★★★</div>
-                  <div className="bg-purple-100 text-purple-900 px-3 py-1 rounded-lg">灾备方案 ★★★★</div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">网络安全策略</span>
+                  <span className="text-yellow-400">★★★</span>
                 </div>
               </div>
-              {/* Connection line */}
-              <div className="w-16 h-px bg-border rotate-45 origin-left mt-2"></div>
+              <p className="text-xs text-blue-200 mt-auto">
+                聚焦网络控制器与SDN/NFV技术落地
+              </p>
             </div>
 
-            {/* Branch 3: Cloud Infrastructure - Right */}
-            <div className="absolute top-1/2 right-4 md:right-8 transform -translate-y-1/2">
-              <div className="flex flex-col items-center space-y-3">
-                <div className="bg-green-700 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
-                  <Smartphone className="w-5 h-5" />
-                  <span className="font-medium text-sm md:text-base">云计算基础设施</span>
+            {/* Card 2: Distributed Systems (Core) */}
+            <div className="bg-purple-900 text-white p-6 rounded-xl shadow-lg h-80">
+              <div className="flex items-center gap-3 mb-4">
+                <Cloud className="w-6 h-6" />
+                <h4 className="text-lg font-semibold">大规模分布式系统</h4>
+              </div>
+              <div className="space-y-2 mb-4 flex-1">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">分布式架构设计</span>
+                  <span className="text-yellow-400">★★★★★</span>
                 </div>
-                <div className="grid grid-cols-1 gap-2 text-xs">
-                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg">云主机部署 ★★★★</div>
-                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg">运维自动化 ★★★★</div>
-                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg">Docker/K8s ★★★★</div>
-                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-lg">资源调度 ★★★</div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">高可用/高可靠方案</span>
+                  <span className="text-yellow-400">★★★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">灾备与容错机制</span>
+                  <span className="text-yellow-400">★★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">大规模集群调度</span>
+                  <span className="text-yellow-400">★★★★</span>
                 </div>
               </div>
-              {/* Connection line */}
-              <div className="w-20 h-px bg-border -ml-20 mt-2"></div>
+              <p className="text-xs text-purple-200 mt-auto">
+                构建可靠的大规模分布式架构体系
+              </p>
             </div>
 
-            {/* Branch 4: Database - Bottom Right */}
-            <div className="absolute bottom-16 right-8 md:right-16">
-              <div className="flex flex-col items-center space-y-3">
-                <div className="bg-gray-600 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
-                  <Database className="w-5 h-5" />
-                  <span className="font-medium text-sm md:text-base">数据库技术</span>
+            {/* Card 3: Cloud Infrastructure */}
+            <div className="bg-slate-100 text-slate-900 p-6 rounded-xl shadow-lg h-80">
+              <div className="flex items-center gap-3 mb-4">
+                <Smartphone className="w-6 h-6" />
+                <h4 className="text-lg font-semibold">云计算基础设施</h4>
+              </div>
+              <div className="space-y-2 mb-4 flex-1">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">云主机部署</span>
+                  <span className="text-orange-500">★★★★</span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
-                  <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg">MySQL ★★★★</div>
-                  <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg">PostgreSQL ★★★★</div>
-                  <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg">Redis ★★★★</div>
-                  <div className="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg">InfluxDB ★★★</div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">运维自动化</span>
+                  <span className="text-orange-500">★★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">Docker/K8s</span>
+                  <span className="text-orange-500">★★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">资源监控告警</span>
+                  <span className="text-orange-500">★★★</span>
                 </div>
               </div>
-              {/* Connection line */}
-              <div className="w-16 h-px bg-border rotate-135 origin-left -mt-2"></div>
+              <p className="text-xs text-slate-600 mt-auto">
+                云基础设施部署与运维自动化
+              </p>
             </div>
 
-            {/* Branch 5: Engineering Practice - Bottom */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-              <div className="flex flex-col items-center space-y-3">
-                <div className="bg-orange-700 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
-                  <Code className="w-5 h-5" />
-                  <span className="font-medium text-sm md:text-base">工程实践</span>
+            {/* Card 4: Frontend Tech */}
+            <div className="bg-slate-100 text-slate-900 p-6 rounded-xl shadow-lg h-80">
+              <div className="flex items-center gap-3 mb-4">
+                <Code className="w-6 h-6" />
+                <h4 className="text-lg font-semibold">前端技术</h4>
+              </div>
+              <div className="space-y-2 mb-4 flex-1">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">React</span>
+                  <span className="text-orange-500">★★★</span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
-                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">CI/CD ★★★★</div>
-                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">微服务架构 ★★★★</div>
-                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">性能优化 ★★★★</div>
-                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">测试驱动开发 ★★★</div>
-                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">代码审查 ★★★★</div>
-                  <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-lg">文档规范 ★★★</div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">前端工程化</span>
+                  <span className="text-orange-500">★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">组件设计</span>
+                  <span className="text-orange-500">★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">TypeScript</span>
+                  <span className="text-orange-500">★★★</span>
                 </div>
               </div>
-              {/* Connection line */}
-              <div className="w-px h-20 bg-border mx-auto -mt-20"></div>
+              <p className="text-xs text-slate-600 mt-auto">
+                现代化前端开发与工程实践
+              </p>
             </div>
 
-            {/* Branch 6: Frontend - Left */}
-            <div className="absolute top-1/2 left-4 md:left-8 transform -translate-y-1/2">
-              <div className="flex flex-col items-center space-y-3">
-                <div className="bg-teal-600 text-white px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
-                  <Code className="w-5 h-5" />
-                  <span className="font-medium text-sm md:text-base">前端技术</span>
+            {/* Card 5: Database Tech */}
+            <div className="bg-slate-100 text-slate-900 p-6 rounded-xl shadow-lg h-80">
+              <div className="flex items-center gap-3 mb-4">
+                <Database className="w-6 h-6" />
+                <h4 className="text-lg font-semibold">数据库技术</h4>
+              </div>
+              <div className="space-y-2 mb-4 flex-1">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">MySQL</span>
+                  <span className="text-orange-500">★★★★</span>
                 </div>
-                <div className="grid grid-cols-1 gap-2 text-xs">
-                  <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-lg">React ★★★</div>
-                  <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-lg">TypeScript ★★★</div>
-                  <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-lg">Vue.js ★★★</div>
-                  <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-lg">Tailwind CSS ★★★</div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">数据库优化</span>
+                  <span className="text-orange-500">★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">事务与锁机制</span>
+                  <span className="text-orange-500">★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">PostgreSQL</span>
+                  <span className="text-orange-500">★★★★</span>
                 </div>
               </div>
-              {/* Connection line */}
-              <div className="w-20 h-px bg-border ml-20 mt-2"></div>
+              <p className="text-xs text-slate-600 mt-auto">
+                数据存储与性能优化解决方案
+              </p>
             </div>
 
-            {/* Legend */}
-            <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-lg border">
-              <p className="text-xs text-muted-foreground">★★★★★ 精通 | ★★★★ 熟练 | ★★★ 掌握</p>
+            {/* Card 6: Engineering Practice */}
+            <div className="bg-slate-100 text-slate-900 p-6 rounded-xl shadow-lg h-80">
+              <div className="flex items-center gap-3 mb-4">
+                <Code className="w-6 h-6" />
+                <h4 className="text-lg font-semibold">工程实践</h4>
+              </div>
+              <div className="space-y-2 mb-4 flex-1">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">Vibe coding</span>
+                  <span className="text-orange-500">★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">CI/CD流程</span>
+                  <span className="text-orange-500">★★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">代码评审</span>
+                  <span className="text-orange-500">★★★</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">测试驱动开发</span>
+                  <span className="text-orange-500">★★★</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-600 mt-auto">
+                现代软件工程实践与质量保障
+              </p>
             </div>
+          </div>
+
+          {/* Legend */}
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground">★★★★★ 精通 | ★★★★ 熟练 | ★★★ 掌握</p>
           </div>
         </section>
 
