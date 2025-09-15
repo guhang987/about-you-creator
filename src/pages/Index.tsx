@@ -139,13 +139,17 @@ const Index = () => {
             </div>
             
             <div className="flex justify-center gap-6">
-              <Button variant="outline" size="lg" className="gap-2 font-light">
-                <Github className="w-4 h-4" />
-                GitHub
+              <Button variant="outline" size="lg" className="gap-2 font-light" asChild>
+                <a href="https://github.com/guhang987" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-4 h-4" />
+                  GitHub
+                </a>
               </Button>
-              <Button variant="outline" size="lg" className="gap-2 font-light">
-                <Mail className="w-4 h-4" />
-                联系我
+              <Button variant="outline" size="lg" className="gap-2 font-light" asChild>
+                <a href="mailto:610203816@qq.com">
+                  <Mail className="w-4 h-4" />
+                  联系我
+                </a>
               </Button>
             </div>
           </div>

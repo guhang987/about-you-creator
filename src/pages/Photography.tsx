@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Camera, MapPin, Clock, Heart, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import photoCityNight from "@/assets/photo-city-night.jpg";
 import photoMorningLight from "@/assets/photo-morning-light.jpg";
 import photoCoffeeShop from "@/assets/photo-coffee-shop.jpg";
@@ -10,6 +11,8 @@ import photoBookstore from "@/assets/photo-bookstore.jpg";
 import photoArchitecture from "@/assets/photo-architecture.jpg";
 
 const Photography = () => {
+  const [selectedCategory, setSelectedCategory] = useState("全部");
+  
   const photos = [
     {
       id: 1,
@@ -80,6 +83,11 @@ const Photography = () => {
   ];
 
   const categories = ["全部", "城市", "自然", "生活", "建筑"];
+  
+  const filteredPhotos = selectedCategory === "全部" 
+    ? photos 
+    : photos.filter(photo => photo.category === selectedCategory);
+  
   const stats = {
     totalPhotos: "328",
     exhibitions: "3",
@@ -152,7 +160,12 @@ const Photography = () => {
         <section className="mb-12">
           <div className="flex justify-center gap-3 flex-wrap">
             {categories.map((category) => (
-              <Badge key={category} variant="outline" className="font-light cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
+              <Badge 
+                key={category} 
+                variant={selectedCategory === category ? "default" : "outline"} 
+                className="font-light cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                onClick={() => setSelectedCategory(category)}
+              >
                 {category}
               </Badge>
             ))}
@@ -161,10 +174,10 @@ const Photography = () => {
 
         {/* Photo Gallery */}
         <section className="mb-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {photos.map((photo) => (
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+            {filteredPhotos.map((photo) => (
               <Card key={photo.id} className="bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card transition-all duration-300 hover:shadow-lg group overflow-hidden">
-                <div className="aspect-[4/3] bg-muted/20 relative overflow-hidden">
+                <div className="aspect-[3/2] bg-muted/20 relative overflow-hidden">
                   <img 
                     src={photo.image} 
                     alt={photo.title}
