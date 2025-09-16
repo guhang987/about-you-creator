@@ -105,3 +105,61 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Tech-inspired gradient heart */
+.text-gradient-heart {
+  display: inline-block;
+  position: relative;
+  animation: pulse 2s infinite;
+}
+
+.text-gradient-heart::before {
+  content: '❤️';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, hsl(219, 78%, 61%), hsl(280, 87%, 65%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: lighten;
+}
+
+.text-gradient-heart:hover::before {
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Cyberpunk style custom classes */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.clip-triangle {
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+/* Add subtle glow effects on hover */
+.tech-card {
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(66, 153, 225, 0.4);
+}

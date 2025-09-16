@@ -155,6 +155,13 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      {/* Footer Creator Info */}
+      <footer className="py-8 text-center font-serif">
+        <p className="text-sm text-foreground opacity-90">
+          Created with <span className="text-gradient-heart inline-block">❤️</span> by lovable and tare
+        </p>
+      </footer>
     </div>
   );
 };
