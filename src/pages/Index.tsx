@@ -20,12 +20,12 @@ const Index = () => {
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6 animate-fade-in">
           <Avatar className="w-40 h-40 mx-auto mb-8 border-2 border-primary/10 animate-float">
-            <AvatarImage src={avatar} alt="李明轩头像" />
-            <AvatarFallback className="text-4xl font-light bg-primary/5">李</AvatarFallback>
+            <AvatarImage src={avatar} alt="叔本华头像" />
+            <AvatarFallback className="text-4xl font-light bg-primary/5">叔</AvatarFallback>
           </Avatar>
           
           <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-wide">
-            李明轩
+            叔本华
           </h1>
           
           
