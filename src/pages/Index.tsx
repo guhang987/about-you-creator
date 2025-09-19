@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Camera, MapPin, Code2, Pen, ArrowDown, Github, Mail, Coffee, Car } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 import techIllustration from "@/assets/tech-illustration.jpg";
 import lifeCollage from "@/assets/life-collage.jpg";
 import blogHero from "@/assets/blog-hero.jpg";
@@ -13,12 +12,7 @@ const Index = () => {
     <div className="min-h-screen bg-background font-serif">
       {/* Hero Section - Full Screen */}
       <section className="h-screen flex flex-col justify-center items-center relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroBg} alt="城市夜景" className="w-full h-full object-cover opacity-60" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/40"></div>
-        
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 animate-fade-in">
+        <div className="text-center max-w-4xl mx-auto px-6 animate-fade-in">
           <Avatar className="w-40 h-40 mx-auto mb-8 border-2 border-primary/10 animate-float">
             <AvatarImage src={avatar} alt="叔本华头像" />
             <AvatarFallback className="text-4xl font-light bg-primary/5">叔</AvatarFallback>
@@ -32,17 +26,7 @@ const Index = () => {
           <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-12">
             <div className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
-              <span>北京</span>
-            </div>
-            <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-            <div className="flex items-center gap-1">
-              <Car className="w-4 h-4" />
-              <span>存在主义者</span>
-            </div>
-            <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-            <div className="flex items-center gap-1">
-              <Coffee className="w-4 h-4" />
-              <span>咖啡爱好者</span>
+              <span>北京·海淀区</span>
             </div>
           </div>
         </div>
@@ -130,11 +114,8 @@ const Index = () => {
             <h2 className="text-4xl font-light mb-8">关于我</h2>
             
             <div className="text-lg leading-relaxed text-muted-foreground font-light space-y-4 mb-12">
-              <p>
-                存在主义者，北漂程序员，在代码与哲学间寻找平衡。
-              </p>
-              <p>
-                开着极氪007GT穿梭于城市，用镜头记录生活，在咖啡香中思考人生。
+              <p className="text-gradient inline-block">
+                💻 全栈程序员/🎸 吉他手/👟 徒步新手/✈️ 旅行家/🏙️ 生活在别处/🚗 极氪车主/📚 死亡诗社成员/☕ 咖啡爱好者
               </p>
             </div>
             
@@ -159,7 +140,7 @@ const Index = () => {
       {/* Footer Creator Info */}
       <footer className="py-8 text-center font-serif">
         <p className="text-sm text-foreground opacity-90">
-          Created with <span className="text-gradient-heart inline-block">❤️</span> by lovable and tare
+          Created with <span className="text-gradient-heart inline-block">❤️</span> by lovable and trae
         </p>
       </footer>
     </div>
