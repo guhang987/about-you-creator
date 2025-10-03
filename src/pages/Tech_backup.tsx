@@ -195,19 +195,36 @@ const Tech = () => {
 
         {/* Research Papers */}
         <section className="mb-20">
-          <h3 className="text-3xl font-light text-center mb-12">学术成果</h3>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-card/50 backdrop-blur-sm border-border/50 p-8 rounded-lg hover:shadow-md transition-all duration-300">
-              <h4 className="text-xl font-light mb-4">论文发表</h4>
-              <ul className="space-y-4 font-light mb-6">
-                <li>1. <span className="font-medium">Hang Gu</span>, Bin Guo, Jiangtao Wang, Wen Sun, Jiaqi Liu, Sicong Liu, Zhiwen Yu. "FedAux: An Efficient Framework for Hybrid Federated Learning", The 2022 IEEE International Conference on Communications (ICC'22).</li>
-                <li>2. <span className="font-medium">Hang Gu</span>, Bin Guo, Jiangshan Zhang, Sicong Liu, Zhenli Sheng, Zhongyi Wang. "SSTGCN: A Deep Learning Framework for Road Intersection Similarity Learning", The 2022 IEEE 19th International Conference on Mobile Ad Hoc and Smart Systems (MASS'22).</li>
-              </ul>
-              
-              <h4 className="text-xl font-light mb-4">专利成果</h4>
+          <h3 className="text-3xl font-light text-center mb-12">我的论文作品</h3>
+          <div className="space-y-6 max-w-4xl mx-auto">
+            <div className="bg-card/50 backdrop-blur-sm border-border/50 p-6 rounded-lg hover:shadow-md transition-all duration-300">
+              <p className="font-light mb-2">
+                <span className="font-medium">Hang Gu</span>, Bin Guo, Jiangtao Wang, Wen Sun, Jiaqi Liu, Sicong Liu, Zhiwen Yu. "FedAux: An Efficient Framework for Hybrid Federated Learning", The 2022 IEEE International Conference on Communications (ICC'22).
+              </p>
+              <div className="flex flex-wrap gap-2 text-sm">
+                <Badge variant="secondary" className="font-light">CCF C 类会议</Badge>
+                <Badge variant="secondary" className="font-light">国家重点研发专项</Badge>
+                <a href="https://ieeexplore.ieee.org/document/9839129" className="text-primary hover:underline flex items-center gap-1">
+                  查看链接
+                </a>
+              </div>
+            </div>
+            
+            <div className="bg-card/50 backdrop-blur-sm border-border/50 p-6 rounded-lg hover:shadow-md transition-all duration-300">
+              <p className="font-light mb-2">
+                <span className="font-medium">Hang Gu</span>, Bin Guo, Jiangshan Zhang, Sicong Liu, Zhenli Sheng, Zhongyi Wang. "SSTGCN: A Deep Learning Framework for Road Intersection Similarity Learning", The 2022 IEEE 19th International Conference on Mobile Ad Hoc and Smart Systems (MASS'22).
+              </p>
+              <div className="flex flex-wrap gap-2 text-sm">
+                <Badge variant="secondary" className="font-light">CCF C 类会议</Badge>
+                <Badge variant="secondary" className="font-light">西工大-华为校企合作项目</Badge>
+              </div>
+            </div>
+            
+            <div className="bg-card/50 backdrop-blur-sm border-border/50 p-6 rounded-lg hover:shadow-md transition-all duration-300">
+              <h4 className="text-lg font-light mb-3">专利成果</h4>
               <ul className="space-y-2 font-light">
-                <li>1. 《一种基于知识迁移的混合联邦学习方法》，公开号：CN114048838A</li>
-                <li>2. 《一种基于模型拆分的混合联邦学习方法》，公开号: CN116911408B</li>
+                <li>• 《一种基于知识迁移的混合联邦学习方法》，公开号：CN114048838A</li>
+                <li>• 《一种基于模型拆分的混合联邦学习方法》，公开(公告)号: CN116911408B</li>
               </ul>
             </div>
           </div>

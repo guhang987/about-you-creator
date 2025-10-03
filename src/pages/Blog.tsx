@@ -104,6 +104,32 @@ const Blog = () => {
           </div>
         </section>
 
+        {/* Douban Link */}
+        <section className="mb-6">
+          <a 
+            href="https://www.douban.com/people/68794713/statuses" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block w-full bg-gradient-to-r from-blue-900/90 to-blue-800 hover:from-blue-800 hover:to-blue-900 text-white py-6 px-8 rounded-xl text-center transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+          >
+            <div className="text-xl md:text-2xl font-medium mb-2">📖 欢迎访问我的豆瓣主页</div>
+            <div className="text-sm md:text-base font-light">https://www.douban.com/people/68794713/statuses</div>
+          </a>
+        </section>
+
+        {/* CSDN Blog Link */}
+        <section className="mb-12">
+          <a 
+            href="https://blog.csdn.net/Protocols7?type=blog" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block w-full bg-gradient-to-r from-primary/90 to-primary hover:from-primary hover:to-primary/90 text-primary-foreground py-6 px-8 rounded-xl text-center transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+          >
+            <div className="text-xl md:text-2xl font-medium mb-2">📚 欢迎访问我的CSDN博客</div>
+            <div className="text-sm md:text-base font-light">https://blog.csdn.net/Protocols7?type=blog</div>
+          </a>
+        </section>
+
         {/* Categories */}
         <section className="mb-12">
           <div className="flex justify-center gap-3 flex-wrap">

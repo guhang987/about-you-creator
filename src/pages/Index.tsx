@@ -115,7 +115,7 @@ const Index = () => {
             
             <div className="text-lg leading-relaxed text-muted-foreground font-light space-y-4 mb-12">
               <p className="text-gradient inline-block">
-                💻 全栈程序员/🎸 吉他手/👟 徒步新手/✈️ 旅行家/🏙️ 生活在别处/🚗 极氪车主/📚 死亡诗社成员/☕ 咖啡爱好者
+                💻 全栈程序员/🎸 吉他新手/👟 徒步新手/✈️ 旅行家/🏙️ 生活在别处/🚗 极氪车主/☕ 咖啡爱好者
               </p>
             </div>
             
