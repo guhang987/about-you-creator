@@ -21,8 +21,8 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ initialTheme }) => {
       return initialTheme === "dark";
     }
     
-    // 否则跟随系统设置
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    // 默认使用浅色模式
+    return false;
   });
 
   // 应用主题

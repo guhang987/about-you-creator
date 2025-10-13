@@ -35,11 +35,23 @@ import photoWinterSnow from "@/assets/7A48D6EA-76A8-4F9E-91DF-B06D5F7595E9_1_105
 import photoStreetArt from "@/assets/970C8113-FE0B-4E23-BEB1-5DE6AE9D3AAC_1_105_c.jpeg";
 import photoFestivalCelebration from "@/assets/A6111E09-9AE0-40C6-A9B2-CA67F0023CB1_1_102_o.jpeg";
 import photoAerialView from "@/assets/A9294BD2-D019-465B-B599-9B519732B2CC_1_106_c.jpeg";
+import photoRoadTrip from "@/assets/e82a6523f5f650075bc41002c01284e5.jpg";
 
 const Photography = () => {
   const [selectedCategory, setSelectedCategory] = useState("全部");
   
   const photos = [
+    {
+      id: 38,
+      title: "3000公里一人自驾",
+      location: "中国公路",
+      date: "2025-10-01",
+      description: "一场漫长的冥想",
+      camera: "Canon R5",
+      settings: "f/5.6, 1/250s, ISO 100",
+      category: "生活",
+      image: photoRoadTrip
+    },
     {
       id: 1,
       title: "城市日落",
@@ -391,7 +403,7 @@ const Photography = () => {
       settings: "f/8.0, 1/100s, ISO 100",
       category: "自然",
       image: photoAerialView
-    }
+    },
   ];
 
   const categories = ["全部", "城市", "自然", "生活", "建筑"];

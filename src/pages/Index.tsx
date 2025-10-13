@@ -14,12 +14,12 @@ const Index = () => {
       <section className="h-screen flex flex-col justify-center items-center relative overflow-hidden">
         <div className="text-center max-w-4xl mx-auto px-6 animate-fade-in">
           <Avatar className="w-40 h-40 mx-auto mb-8 border-2 border-primary/10 animate-float">
-            <AvatarImage src={avatar} alt="叔本华头像" />
-            <AvatarFallback className="text-4xl font-light bg-primary/5">叔</AvatarFallback>
+            <AvatarImage src={avatar} alt="海边的卡夫卡头像" />
+            <AvatarFallback className="text-4xl font-light bg-primary/5">卡</AvatarFallback>
           </Avatar>
           
           <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-wide">
-            叔本华
+            海边的卡夫卡
           </h1>
           
           
@@ -115,23 +115,23 @@ const Index = () => {
             
             <div className="text-lg leading-relaxed text-muted-foreground font-light space-y-4 mb-12">
               <p className="text-gradient inline-block">
-                💻 全栈程序员/🎸 吉他新手/👟 徒步新手/✈️ 旅行家/🏙️ 生活在别处/🚗 极氪车主/☕ 咖啡爱好者
+                💻 全栈程序员/🎸 吉他新手/👟 徒步新手/📚 文学爱好者/✈️ 旅行家/🚗 极氪车主/☕ 咖啡爱好者
               </p>
             </div>
             
-            <div className="flex justify-center gap-6">
-              <Button variant="outline" size="lg" className="gap-2 font-light" asChild>
-                <a href="https://github.com/guhang987" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-4 h-4" />
-                  GitHub
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2 font-light" asChild>
-                <a href="mailto:610203816@qq.com">
-                  <Mail className="w-4 h-4" />
-                  联系我
-                </a>
-              </Button>
+
+          </div>
+        </div>
+      </section>
+      
+      {/* QR Code Section */}
+      <section className="py-12 px-6 bg-muted/10">
+        <div className="max-w-2xl mx-auto">
+          <h3 className="text-4xl font-light text-center mb-8">联系我</h3>
+          <div className="text-center py-4">
+            <div className="inline-block px-8 py-4 bg-white rounded-lg shadow-sm border border-muted">
+              <p className="text-sm text-muted-foreground mb-1">微信号</p>
+              <p className="text-sm text-muted-foreground">ghnwpu987</p>
             </div>
           </div>
         </div>
